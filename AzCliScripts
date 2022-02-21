@@ -1,2 +1,9 @@
 #Search all credentials for SPN - based on article https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-cli
-az role assignment list --assignee {objectId} --all #TODO make a bash script to go over a given array of strings containing all relevant subscription names.
+az role assignment list --assignee {objectId} --all
+
+*Powershell script:*
+  $objectID = oid
+  $subscriptions = "sub1", "sub2", "sub3"
+  foreach ($item in $subscriptions) {
+      az role assignment list --assignee $objectID --all -o table --subscription $item
+  }

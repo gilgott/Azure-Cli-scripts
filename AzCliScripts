@@ -2,7 +2,7 @@
 az role assignment list --assignee {objectId} --all
 
 *Powershell script:*
-  $objectID = oid
+  $objectID = "<oid>"
   $subscriptions = "sub1", "sub2", "sub3"
   foreach ($item in $subscriptions) {
       az role assignment list --assignee $objectID --all -o table --subscription $item
